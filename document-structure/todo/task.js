@@ -1,21 +1,10 @@
 const form = document.getElementById('tasks__form');
 const input = document.getElementById('task__input');
 const list = document.getElementById('tasks__list');
-const addButton = document.getElementById('tasks__add');
 
 form.addEventListener('submit', function (event) {
   event.preventDefault(); 
-  addTask();
-});
 
-input.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
-    event.preventDefault();
-    addTask();
-  }
-});
-
-function addTask() {
   const text = input.value.trim();
   if (text === '') return;
 
@@ -42,4 +31,4 @@ function addTask() {
   list.appendChild(task);
 
   input.value = '';
-}
+});
